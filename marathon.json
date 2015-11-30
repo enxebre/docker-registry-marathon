@@ -1,16 +1,19 @@
 {
-  "id": "docker-regsitry-marathon",
+  "id": "docker-registry-marathon",
   "instances": 1,
   "cpus": 0.2,
   "mem": 2048,
   "env": {
-    "MARATHON_ENDPOINT": "marathon.consul.service",
+    "SERVICE_NAME": "docker-registry-marathon",
+    "SERVICE_TAGS": "docker-registry-marathon",
+    "MARATHON_URI": "marathon.service.consul:8080"
   },
   "labels": {
-    "DCOS_PACKAGE_NAME": "docker-regsitry-marathon",
+    "DCOS_PACKAGE_NAME": "docker-registry-marathon",
     "DCOS_PACKAGE_IS_FRAMEWORK": "false",
-    "DCOS_PACKAGE_VERSION": "0.1.0",
+    "DCOS_PACKAGE_VERSION": "0.1.0"
   },
+
   "healthChecks": [
     {
       "gracePeriodSeconds": 120,

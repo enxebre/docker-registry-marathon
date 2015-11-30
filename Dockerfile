@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:5.1.0
+FROM mhart/alpine-node:4.2.2
 
 MAINTAINER Alberto García Lamela <alberto.garcial@hotmail.com>
 
