@@ -1,0 +1,40 @@
+{
+  "id": "docker-regsitry-marathon",
+  "instances": 1,
+  "cpus": 0.2,
+  "mem": 2048,
+  "env": {
+    "MARATHON_ENDPOINT": "marathon.consul.service",
+  },
+  "labels": {
+    "DCOS_PACKAGE_NAME": "docker-regsitry-marathon",
+    "DCOS_PACKAGE_IS_FRAMEWORK": "false",
+    "DCOS_PACKAGE_VERSION": "0.1.0",
+  },
+  "healthChecks": [
+    {
+      "gracePeriodSeconds": 120,
+      "intervalSeconds": 15,
+      "maxConsecutiveFailures": 10,
+      "path": "/",
+      "portIndex": 0,
+      "protocol": "HTTP",
+      "timeoutSeconds": 5
+    }
+  ],
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "capgemini/docker-regsitry-marathon",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 0,
+          "servicePort": 0,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  }
+}
