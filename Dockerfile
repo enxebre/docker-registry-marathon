@@ -1,8 +1,7 @@
-FROM mhart/alpine-node:4.2.2
+FROM node:4.2.2-wheezy
 
 MAINTAINER Alberto García Lamela <alberto.garcial@hotmail.com>
 
-RUN apk add --update make gcc g++ python
 RUN npm install -g gulp
 
 WORKDIR /src
